@@ -1,0 +1,55 @@
+﻿@page
+@model Movie.Pages.Purchases.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Purchases</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchase[0].currentTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchase[0].ShowtimeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchase[0].MovieID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchase[0].TheaterID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Purchase[0].NumberTickets)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Purchase) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowtimeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheaterID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberTickets)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@page
+@model Movie.Pages.Showtimes.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Showtime</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.Time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.MovieID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.MovieID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.movieTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.movieTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.TheaterID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.TheaterID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.TheaterLocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.TheaterLocation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Showtime.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

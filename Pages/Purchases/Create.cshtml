@@ -1,0 +1,78 @@
+﻿@page
+@model Movie.Pages.Purchases.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Purchase</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Purchase.currentTime" class="control-label"></label>
+                <input type="datetime-local" asp-for="Purchase.currentTime" class="form-control" />
+                <span asp-validation-for="Purchase.currentTime" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="Purchase.ShowtimeID" class="control-label"></label>
+                <input type="number" asp-for="Purchase.ShowtimeID" class="form-control" id="showtimeIDText" readonly="readonly"/>
+                <span asp-validation-for="Purchase.ShowtimeID" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="Purchase.MovieID" class="control-label"></label>
+                <input type="number" asp-for="Purchase.MovieID" class="form-control" id="movieIDText" readonly="readonly"/>
+                <span asp-validation-for="Purchase.MovieID" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="Purchase.TheaterID" class="control-label"></label>
+                <input type="number" asp-for="Purchase.TheaterID" class="form-control" id="theaterIDText" readonly="readonly"/>
+                <span asp-validation-for="Purchase.TheaterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Purchase.NumberTickets" class="control-label"></label>
+                <input asp-for="Purchase.NumberTickets" class="form-control" />
+                <span asp-validation-for="Purchase.NumberTickets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Purchase" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    
+    var urlParams;
+    (window.onpopstate = function () {
+        var match,
+            pl = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+            urlParams[decode(match[1])] = decode(match[2]);
+    })();
+
+    document.getElementById('movieIDText').value = urlParams["movieID"];
+    document.getElementById('showtimeIDText').value = urlParams["showtimeID"];
+    document.getElementById('theaterIDText').value = urlParams["theaterID"];
+
+
+
+
+</script>

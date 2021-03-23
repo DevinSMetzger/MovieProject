@@ -1,0 +1,54 @@
+﻿@page
+@model Movie.Pages.Showtimes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Showtime</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Showtime.Time" class="control-label"></label>
+                <input asp-for="Showtime.Time" class="form-control" />
+                <span asp-validation-for="Showtime.Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Showtime.MovieID" class="control-label"></label>
+                <input asp-for="Showtime.MovieID" class="form-control" />
+                <span asp-validation-for="Showtime.MovieID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Showtime.movieTitle" class="control-label"></label>
+                <input asp-for="Showtime.movieTitle" class="form-control" />
+                <span asp-validation-for="Showtime.movieTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Showtime.TheaterID" class="control-label"></label>
+                <input asp-for="Showtime.TheaterID" class="form-control" />
+                <span asp-validation-for="Showtime.TheaterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Showtime.TheaterLocation" class="control-label"></label>
+                <input asp-for="Showtime.TheaterLocation" class="form-control" />
+                <span asp-validation-for="Showtime.TheaterLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

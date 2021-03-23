@@ -1,0 +1,52 @@
+﻿@page
+@model Movie.Pages.Showtimes.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Showtime</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.Time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.MovieID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.MovieID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.movieTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.movieTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.TheaterID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.TheaterID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Showtime.TheaterLocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Showtime.TheaterLocation)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Showtime.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

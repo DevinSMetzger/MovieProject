@@ -1,0 +1,49 @@
+﻿@page
+@model Movie.Pages.Purchases.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.currentTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.currentTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.ShowtimeID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.ShowtimeID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.MovieID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.MovieID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.TheaterID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.TheaterID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.NumberTickets)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.NumberTickets)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Purchase.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

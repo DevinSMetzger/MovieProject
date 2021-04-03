@@ -2,7 +2,7 @@
 @model Movie.Pages.Theaters.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Theaters";
 }
 <h1>Theaters</h1>
 <p>
@@ -35,7 +35,8 @@
 @foreach (var item in Model.Theater) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Location)
+                <a asp-page="../Showtimes/Index" asp-route-TheaterLocation="@item.Location">@Html.DisplayFor(modelItem => item.Location)</a>
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Capacity)

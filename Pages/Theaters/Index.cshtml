@@ -35,7 +35,7 @@
 @foreach (var item in Model.Theater) {
         <tr>
             <td>
-                <a asp-page="../Showtimes/Index" asp-route-TheaterLocation="@item.Location">@Html.DisplayFor(modelItem => item.Location)</a>
+                <a asp-page="../Showtimes/Index" asp-route-LocationSearch="@item.Location">@Html.DisplayFor(modelItem => item.Location)</a>
                 
             </td>
             <td>
